@@ -21,10 +21,10 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(logger); // Add the custom logger middleware
-app.use(express.json({ limit: '50mb' })); // For handling JSON and large data (like base64 images)
-app.use(cors()); // Enable Cross-Origin Resource Sharing 
-app.use(morgan('dev')); // HTTP request logger for development
+app.use(logger); 
+app.use(express.json({ limit: '50mb' })); 
+app.use(cors()); 
+app.use(morgan('dev')); 
 
 // Routes
 
