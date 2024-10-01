@@ -170,3 +170,29 @@ exports.updateUser = async (req, res) => {
     res.status(500).json({ message: 'Error updating user' });
   }
 };
+
+// Update workshop information (contactInfo, address, mapLocation)
+exports.updateWorkshopInfo = async (req, res) => {
+  const { contactInfo, address, mapLocation } = req.body;
+
+  try {
+    // Ensure the user is a workshop before allowing the update
+    if (req.user.role !== 'workshop') {
+      return res.status(403).json({ message: 'Only workshops can update this information' });
+    }
+
+    // Find and update the workshop's information
+    const updatedUser = await User.findByIdAndUpdate(
+      req.user.userId,
+      { contactInfo, address, mapLocation },
+      { new: true }  // Return the updated document
+    );
+
+    res.json({
+      message: 'Workshop information updated successfully',
+      updatedUser,
+    });
+  } catch (error) {
+    res.status(500).json({ message: 'Error updating workshop information' });
+  }
+};
