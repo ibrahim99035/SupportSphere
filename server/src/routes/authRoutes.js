@@ -6,7 +6,9 @@ const {
         getCurrentUser, 
         updatePassword, 
         forgotPassword, 
-        resetPassword 
+        resetPassword,
+        updateUser,
+        updateWorkshopInfo
     } = require('../controllers/authController');
 
 const { protect } = require('../middleware/authMiddleware');
@@ -16,12 +18,14 @@ const router = express.Router();
 
 router.post('/register', registerUser);
 router.post('/login', loginUser);
-router.post('/activate', activateEmail);
+router.put('/activate-email', activateEmail);
 router.get('/me', protect, getCurrentUser);
 router.put('/update-password', protect, updatePassword);
 router.post('/forgot-password', forgotPassword);
-router.post('/reset-password', resetPassword);
+router.put('/reset-password', resetPassword);
 
-router.put('/workshop-data', protect, authorizeRoles('workshop'), updateWorkshopInfo);
+router.put('/workshop-data/:userId', protect, authorizeRoles('admin', 'workshop'), updateWorkshopInfo);
+
+router.put('/update-profile', protect, updateUser);
 
 module.exports = router;

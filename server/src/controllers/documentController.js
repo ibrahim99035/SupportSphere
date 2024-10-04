@@ -84,3 +84,20 @@ exports.updateDocumentStatus = async (req, res) => {
     res.status(500).json({ message: 'Error updating document status' });
   }
 };
+
+// Get documents by status
+exports.getDocumentsByStatus = async (req, res) => {
+  try {
+    const { status } = req.params;
+
+    const validStatuses = ['in progress', 'done'];
+    if (!validStatuses.includes(status)) {
+      return res.status(400).json({ message: 'Invalid status' });
+    }
+
+    const documents = await Document.find({ status }).populate('problem moderator', 'description name');
+    res.json(documents);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching documents by status' });
+  }
+};

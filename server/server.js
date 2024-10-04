@@ -9,7 +9,12 @@ const { logger } = require('./src/middleware/logger');
 const { notFound } = require('./src/middleware/notFound');
 
 // Import Routes
-
+const authRoutes = require('./src/routes/authRoutes');
+const dealRoutes = require('./src/routes/dealRoutes');
+const documentRoutes = require('./src/routes/documentRoutes');
+const offerRoutes = require('./src/routes/offerRoutes');
+const problemRoutes = require('./src/routes/problemRoutes');
+const userRoutes = require('./src/routes/userRoutes');
 
 // Load environment variables
 dotenv.config();
@@ -27,7 +32,12 @@ app.use(cors());
 app.use(morgan('dev')); 
 
 // Routes
-
+app.use('/api/auth', authRoutes);
+app.use('/api/deals', dealRoutes);
+app.use('/api/documents', documentRoutes);
+app.use('/api/offers', offerRoutes);
+app.use('/api/problems', problemRoutes);
+app.use('/api/admin-dashboard', userRoutes); 
 
 // Error Handling Middleware
 app.use(notFound);

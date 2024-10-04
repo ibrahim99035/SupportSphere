@@ -6,11 +6,8 @@ exports.createDeal = async (req, res) => {
     const newDeal = new Deal({
       problem: req.body.problemId,
       document: req.body.documentId,
-      offers: req.body.offerIds,
-      chosenOffer: req.body.chosenOfferId,
       customer: req.user._id,
       moderator: req.body.moderatorId,
-      workshop: req.body.workshopId,
     });
     await newDeal.save();
     res.status(201).json(newDeal);
@@ -171,5 +168,40 @@ exports.getDealsByWorkshop = async (req, res) => {
     res.json(deals);
   } catch (error) {
     res.status(500).json({ message: 'Error fetching deals for workshop' });
+  }
+};
+
+// Get deals by user ID (customer, moderator, or workshop)
+exports.getDealsByUserId = async (req, res) => {
+  const { userId, role } = req.params; // Assuming role and userId are passed as route parameters
+  let filter = {};
+
+  try {
+    // Build filter condition based on role
+    switch (role) {
+      case 'moderator':
+        filter = { moderator: userId };
+        break;
+      case 'customer':
+        filter = { customer: userId };
+        break;
+      case 'workshop':
+        filter = { workshop: userId };
+        break;
+      default:
+        return res.status(400).json({ message: 'Invalid role' });
+    }
+
+    const deals = await Deal.find(filter)
+      .populate('problem')
+      .populate('document')
+      .populate('offers')
+      .populate('customer', 'name email')  // Populate customer details
+      .populate('moderator', 'name email') // Populate moderator details
+      .populate('workshop', 'name email'); // Populate workshop details
+
+    res.json(deals);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching deals for the user' });
   }
 };

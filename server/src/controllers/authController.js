@@ -2,6 +2,8 @@ const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+const generateToken = require('../utils/generateToken');
+
 // Environment variables
 const JWT_SECRET = process.env.JWT_SECRET;
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN;
@@ -17,6 +19,11 @@ exports.registerUser = async (req, res) => {
       return res.status(400).json({ message: 'User already exists' });
     }
 
+    // Check if the role is admin
+    if (role === 'admin') {
+      return res.status(403).json({ message: 'Unauthorized: cannot assign admin role' });
+    }
+
     // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -28,7 +35,7 @@ exports.registerUser = async (req, res) => {
       role,
       active: true,
       approved: false,
-      emailActivated: false
+      emailActivated: false,
     });
 
     await user.save();
@@ -44,24 +51,21 @@ exports.loginUser = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    // Check if the user exists
-    const user = await User.findOne({ email });
-    if (!user) {
-      return res.status(400).json({ message: 'Invalid credentials' });
-    }
+      const user = await User.findOne({ email });
 
-    // Check if the password is correct
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      return res.status(400).json({ message: 'Invalid credentials' });
-    }
-
-    // Generate JWT
-    const token = jwt.sign({ userId: user._id, role: user.role }, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
-
-    res.json({ token });
-  } catch (error) {
-    res.status(500).json({ message: 'Server error during login' });
+      if (user && (await user.matchPassword(password))) {
+          res.json({
+              _id: user._id,
+              name: user.name,
+              email: user.email,
+              role: user.role,
+              token: generateToken(user._id),
+          });
+      } else {
+          res.status(401).json({ message: 'Invalid email or password' });
+      }
+  } catch (err) {
+      res.status(500).json({ message: err.message });
   }
 };
 
@@ -164,7 +168,7 @@ exports.resetPassword = async (req, res) => {
 // Update user details
 exports.updateUser = async (req, res) => {
   try {
-    const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true }); 
     res.json(updatedUser);
   } catch (error) {
     res.status(500).json({ message: 'Error updating user' });
@@ -174,16 +178,25 @@ exports.updateUser = async (req, res) => {
 // Update workshop information (contactInfo, address, mapLocation)
 exports.updateWorkshopInfo = async (req, res) => {
   const { contactInfo, address, mapLocation } = req.body;
+  const { userId } = req.params;  // Extract the userId from URL parameters
+  console.log(userId);
 
   try {
+    // Fetch the user by userId from the database
+    const user = await User.findById(userId);
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
     // Ensure the user is a workshop before allowing the update
-    if (req.user.role !== 'workshop') {
+    if (user.role !== 'workshop') {
       return res.status(403).json({ message: 'Only workshops can update this information' });
     }
 
-    // Find and update the workshop's information
+    // Update the user's workshop information
     const updatedUser = await User.findByIdAndUpdate(
-      req.user.userId,
+      userId,
       { contactInfo, address, mapLocation },
       { new: true }  // Return the updated document
     );
@@ -193,6 +206,7 @@ exports.updateWorkshopInfo = async (req, res) => {
       updatedUser,
     });
   } catch (error) {
+    console.error("Error:", error);
     res.status(500).json({ message: 'Error updating workshop information' });
   }
 };

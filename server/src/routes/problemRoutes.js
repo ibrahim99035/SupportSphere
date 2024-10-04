@@ -16,22 +16,22 @@ const {
 const router = express.Router();
 
 // Route for creating a new problem
-router.post('/', protect, authorizeRoles(['admin', 'customer']), createProblem);
+router.post('/new', protect, authorizeRoles(['admin', 'customer']), createProblem);
 
 // Route for getting all problems (moderators can view)
-router.get('/', protect, authorizeRoles(['admin', 'moderator', 'customer']), getProblems);
+router.get('/retrieve-all', protect, authorizeRoles(['admin', 'moderator', 'customer']), getProblems);
 
 // Route for getting a single problem by ID
-router.get('/:id', protect, authorizeRoles(['admin', 'moderator', 'customer']), getProblemById);
+router.get('/problem/:id', protect, authorizeRoles(['admin', 'moderator', 'customer']), getProblemById);
 
 // Route for updating the status of a problem
-router.put('/:id/status', protect, authorizeRoles(['admin', 'moderator']), updateProblemStatus);
+router.put('/problem/:id/status/update', protect, authorizeRoles(['admin', 'moderator']), updateProblemStatus);
 
 // Route for assigning a moderator to a problem
-router.put('/:id/assign', protect, authorizeRoles(['admin', 'moderator']), assignModerator);
+router.put('/problem/:id/assign-mod', protect, authorizeRoles(['admin', 'moderator']), assignModerator);
 
 // Route for deleting a problem
-router.delete('/:id', protect, authorizeRoles('admin'), deleteProblem);
+router.delete('/problem/:id/delete', protect, authorizeRoles('admin'), deleteProblem);
 
 // Route for getting problems by status
 router.get('/status/:status', protect, authorizeRoles(['admin', 'moderator']), getProblemsByStatus);

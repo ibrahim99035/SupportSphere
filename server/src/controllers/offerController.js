@@ -115,3 +115,20 @@ exports.updateOfferStatus = async (req, res) => {
     res.status(500).json({ message: 'Error updating offer status' });
   }
 };
+
+// Get offers by status
+exports.getOffersByStatus = async (req, res) => {
+  try {
+    const { status } = req.params;
+
+    const validStatuses = ['buffering', 'accepted', 'denied'];
+    if (!validStatuses.includes(status)) {
+      return res.status(400).json({ message: 'Invalid status' });
+    }
+
+    const offers = await Offer.find({ status }).populate('document workshop', 'name description');
+    res.json(offers);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching offers by status' });
+  }
+};
