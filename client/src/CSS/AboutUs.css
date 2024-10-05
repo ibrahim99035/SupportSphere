@@ -20,7 +20,12 @@
   .about-us-intro {
     text-align: center;
     margin-bottom: 50px;
-    border: #24995b solid 1px;
+    border: #242c99 solid 1px;
+    color: white;
+    background-color: #007bff;
+    padding-bottom: 15px;
+    border-radius: 15px;
+    box-shadow: 1px black;
   }
   
   .intro-text {
