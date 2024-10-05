@@ -16,7 +16,7 @@ const News = () => {
             <div className="overlay-image"></div>
             <Header />
             <HeroSection />
-            <h1>معارض الضجيج للأثاث - الأخبار</h1>
+            <h1>منصة نطاق الدعم - الأخبار</h1>
             <NewsMain />
             <div id='news-page-logo'>
                 <img src={Icon} alt="Malls Icon" />
