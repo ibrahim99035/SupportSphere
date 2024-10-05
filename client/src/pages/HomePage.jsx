@@ -16,6 +16,7 @@ const HomePage = () => {
         <div>
             <div className="overlay-image"></div>
             <Header />
+            <HeroSection />
             <PopUpCardGrid />
             <PartenersSlider />
             <Up />
