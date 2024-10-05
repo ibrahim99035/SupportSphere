@@ -3,9 +3,9 @@ import { useInView } from 'react-intersection-observer';
 import PopUpCard from './PopUpCard';
 import '../../CSS/PopUpCardGrid.css';
 
-import { GiSofa } from "react-icons/gi";
-import { GiNightSleep } from "react-icons/gi";
-import { MdHighQuality } from "react-icons/md";
+import { FaCar } from "react-icons/fa6";
+import { FaHandshake } from "react-icons/fa";
+import { GrUserWorker } from "react-icons/gr";
 
 const PopUpCardGrid = () => {
   const { ref: cardRef1, inView: inView1 } = useInView({ triggerOnce: true });
@@ -14,10 +14,10 @@ const PopUpCardGrid = () => {
 
   const cards = [
     {
-      image: 'https://plus.unsplash.com/premium_photo-1682309834966-485aedc99be5?q=80&w=1512&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       title: 'الشفافية',
       description: 'نلتزم بتوفير معلومات واضحة وعروض عادلة، دون أي تكاليف خفية أو مفاجآت غير متوقعة.',
-      icon: <MdHighQuality />,
+      icon: <FaCar />,
       ref: cardRef1,
       inView: inView1
     },
@@ -25,7 +25,7 @@ const PopUpCardGrid = () => {
       image: 'https://images.unsplash.com/photo-1515569067071-ec3b51335dd0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       title: 'الابتكار',
       description: 'نعمل باستمرار على تحسين خدماتنا من خلال التكنولوجيا الحديثة لتقديم حلول سريعة وفعالة.',
-      icon: <GiSofa/>,
+      icon: <FaHandshake />,
       ref: cardRef2,
       inView: inView2
     },
@@ -33,7 +33,7 @@ const PopUpCardGrid = () => {
       image: 'https://images.unsplash.com/photo-1508974239320-0a029497e820?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       title: 'الجودة',
       description: 'نختار بعناية الورش المتعاونة معنا لضمان تقديم خدمات عالية الجودة تلبي تطلعات عملائنا.',
-      icon: <GiNightSleep />,
+      icon: <GrUserWorker />,
       ref: cardRef3,
       inView: inView3
     }
