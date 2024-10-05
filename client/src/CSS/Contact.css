@@ -1,0 +1,174 @@
+.contact-us {
+    background: linear-gradient(135deg, var(--blacker-color) 0%, var(--main-color) 100%);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+  
+.contact-us h2 {
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 20px;
+    z-index: 1000;
+}
+  
+.contact-us p {
+    font-size: 1.2em;
+    color: #fff;
+    margin-bottom: 30px;
+    z-index: 1000;
+}
+  
+.social-icons {
+    margin-bottom: 30px;
+    z-index: 1000;
+}
+
+.social-icons a{
+    z-index: 1000;
+}
+
+.social-icons a {
+    font-size: 1.5em;
+    color: #fff;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+    z-index: 1000;
+}
+
+#whatsappIcon:hover{
+    color: #128C7E;
+}
+  
+#instgramIcon:hover{
+    color: #e6683c;
+}
+  
+#twitterIcon:hover{
+    color: black;
+}
+  
+#linkedIcon:hover{
+    color: #0A66C2;
+}
+  
+#facebookIcon:hover{
+    color: #1877F2;
+}
+  
+#gmailIcon:hover{
+    color: #EA4335;
+}
+  
+#youtubeIcon:hover{
+    color: #FF0000;
+}
+  
+#telegramIcon:hover{
+    color: #0088CC;
+}
+  
+#tiktokIcon:hover{
+    color: #490d1c;
+}
+
+.social-icons a:hover {
+    color: var(--main-color);
+    z-index: 1000;
+}
+  
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+  
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+    z-index: 1000;
+}
+  
+.contact-form input {
+    height: 50px;
+    z-index: 1000;
+}
+  
+.contact-form textarea {
+    height: 150px;
+    resize: none;
+    z-index: 1000;
+}
+  
+.contact-form button {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--blacker-color);
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+  
+.contact-form button:hover {
+    background-color: var(--main-color);
+}
+  
+#ContactPageLogo{
+    color: #fff;
+    margin: auto;
+    text-align: center;
+}
+
+h1{
+    color: #fff;
+    text-align: center;
+}
+
+#ContactPageLogo img{
+    max-width: 200px;
+}
+
+#ContactPageLogoTiny{
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+#ContactPageLogoTiny img{
+    max-width: 50px;
+    margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .contact-us {
+        padding: 50px;
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .contact-us {
+        padding: 30px;
+        height: 40%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .contact-us {
+        padding: 20px;
+        height: 30%;
+    }
+}

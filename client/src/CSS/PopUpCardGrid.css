@@ -1,0 +1,32 @@
+.popcard-grid {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto; /* Allows horizontal scrolling if cards overflow */
+    padding: 20px;
+    gap: 20px; /* Space between cards */
+    align-items: center; /* Align cards to the top */
+    justify-content: center;
+  }
+  
+  /* Optional: Styling for the card row container */
+  .popcard-grid::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+  }
+
+#popupcardcontainer{
+  text-align: center;
+  color: #fff;
+  position: relative;
+  z-index: 1000;
+}
+  
+  @media (max-width: 668px) {
+    .popcard-grid {
+      flex-direction: column; /* Stack cards vertically on small screens */
+      align-items: center;
+      width: 90%;
+      margin: auto;
+      border-radius: 15px;
+    }
+  }
+  

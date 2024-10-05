@@ -1,0 +1,137 @@
+/* Header.css */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #060741;
+    color: white;
+  }
+  
+  .logo img {
+    width: 120px;
+    position: relative;
+    z-index: 1000;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    direction: rtl;
+    position: relative;
+    z-index: 1000;
+  }
+  
+  .nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  .nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bolder;
+  }
+  
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    position: relative;
+    z-index: 1000;
+    gap: 5px;
+  }
+  
+  .menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+  
+  .nav.open {
+    display: flex; /* Display the menu when open */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center the items horizontally */
+  }
+  
+  .nav.open ul {
+    display: flex; /* Ensure the list items are displayed */
+    flex-direction: column; /* Stack items vertically */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+  
+  .nav.open ul li {
+    margin-bottom: 15px; /* Space between items */
+  }
+  
+  .nav.open ul li:last-child {
+    margin-bottom: 0; /* Remove bottom margin from the last item */
+  }
+  
+  .menu-toggle.open .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(7px);
+  }
+  
+  .menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-7px);
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .join-us-button {
+    background-color: #143d63;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1000;
+  }
+  
+  .user-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  
+  /* Responsive for mobile */
+  @media (max-width: 768px) {
+    .nav {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background-color: #143d63;
+      padding: 20px;
+      display: none; /* Hide the menu by default on mobile */
+    }
+  
+    .nav.open {
+      display: flex; /* Show the menu when open */
+    }
+  
+    .nav ul {
+      flex-direction: column; /* Stack items vertically */
+      text-align: center;
+    }
+  
+    .menu-toggle {
+      display: flex; 
+    }
+  }  

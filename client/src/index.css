@@ -1,68 +1,168 @@
+/* Define root-level variables for color palette */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --main-color: #134d2e;  /* Main color for text and accents */
+  --sec-color: #1f1e1e;   /* Secondary color for highlights */
+  --dark-color: #0c0d68;  /* Dark background color */
+  --bg-color: #f2f8fb;    /* Background color */
+  --blacker-color: linear-gradient(to right, #275469, #060741);
 }
 
+/* Global styling for all elements */
+* {
+  box-sizing: border-box;
+  font-family: "Changa", sans-serif;
+}
+
+/* Styling for anchor (link) elements */
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  text-decoration: none;
+  font-family: "Changa", sans-serif;
+  color: var(--bg-color);
+  transition: all 0.3s linear;
 }
+
+/* Hover state for anchor elements */
 a:hover {
-  color: #535bf2;
+  text-decoration: none;
+  color: var(--sec-color);
+  transition: all 0.3s linear;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+/* Focus state for anchor elements */
+a:focus {
+  text-decoration: none;
+  /* color: inherit; */
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
+/* Styling for buttons and their hover state */
+button,
 button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: all 0.3s linear;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* Global styling for the body of the document */
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Changa", sans-serif;
+  background: var(--blacker-color);
+  text-align: start;
+  z-index: 1000;
+}
+
+.overlay-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/carspattern.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  opacity: 0.1;
+}
+
+/* Styling for section and footer elements */
+section,
+footer {
+  position: relative;
+}
+
+/* Styling for paragraphs */
+p {
+  margin: 0;
+  color: var(--sec-color);  /* You might consider using a variable here as well */
+  font-size: 15px;
+  line-height: 25px;
+}
+
+/* Styling for unordered lists */
+ul {
+  padding: 0;
+  margin: 0;
+  display: block;
+  transition: all 0.3s linear;
+}
+
+/* Styling for list items */
+li {
+  display: block;
+  list-style: none;
+  transition: all 0.3s linear;
+}
+
+/* Responsive styling for iframes */
+iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* Remove outline on various interactive elements */
+input,
+button,
+input:focus,
+button:focus,
+input:active,
+button:active,
+button:hover,
+textarea:active,
+textarea:focus,
+select,
+select:active,
+select:focus {
+    outline: none !important;
+}
+
+/* Disable resizing of textareas */
+textarea {
+    resize: none;
+}
+
+/* Styling for the main content area */
+main {
+    overflow: hidden;
+    /* min-height: 100vh; */
+}
+
+#news-page h1{
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 1000;
+}
+
+#news-page-logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1000;
+}
+
+#news-page-logo img{
+  max-width: 300px;
+  margin: auto;
+}
+
+#hometext{
+  text-align: center;
+  color: white;
+  direction: rtl;
+  margin: 50px;
+  position: relative;
+  z-index: 1000;
+}
+
+#homelogo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+}
+
+#homelogo img{
+  max-width: 200px;
 }

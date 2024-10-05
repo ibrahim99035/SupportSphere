@@ -1,0 +1,106 @@
+#careers {
+    padding: 60px 20px;
+    background-color: #f4f4f498;
+    width: 85%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    direction: rtl;
+    position: relative;
+    z-index: 1000;
+  }
+  
+  #careers .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  #careers h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #143d63;
+  }
+  
+  .job-listings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .job-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 calc(33% - 40px);
+    margin: 10px;
+  }
+  
+  .job-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .job-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  
+  .location, .type {
+    font-style: italic;
+    color: #777;
+  }
+  
+  .description {
+    margin: 20px 0;
+  }
+  
+  .job-details {
+    margin-top: 20px;
+  }
+  
+  .job-details h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #143d63;
+  }
+  
+  .job-details ul {
+    list-style: disc;
+    padding-left: 20px;
+  }
+  
+  .apply-now {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .apply-now h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  
+  .apply-now a {
+    color: #143d63;
+    text-decoration: underline;
+  }
+  #logo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+  }
+  #logo-container img{
+    max-width: 200px;
+  }
+  
+  @media (max-width: 768px) {
+    .job-card {
+      flex: 1 1 100%;
+    }
+  }
+  

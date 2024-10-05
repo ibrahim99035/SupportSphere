@@ -1,0 +1,138 @@
+.about-us-container {
+    padding: 50px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    z-index: 1000;
+  }
+  
+  .about-us-container p{
+    color: #fff;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  .about-us-intro {
+    text-align: center;
+    margin-bottom: 50px;
+    border: #24995b solid 1px;
+  }
+  
+  .intro-text {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .our-mission-vision{
+    text-align: center;
+    color: #fff;
+    border: #24995b solid 1px;
+  }
+  
+  .team-section {
+    margin-bottom: 50px;
+  }
+  
+  .team-container {
+    display: flex;
+    justify-content: space-around;
+    color: #24995b;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .team-card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 300px;
+    text-align: center;
+    color: #24995b !important;
+  }
+  
+  .team-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .team-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .team-info {
+    padding: 20px;
+    color: #24995b !important;
+  }
+  .team-info p{
+    color: #24995b !important;
+  }
+  
+  .team-name {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .team-role {
+    font-size: 1.2rem;
+    color: #6c757d;
+  }
+  
+  .team-bio {
+    font-size: 1rem;
+    color: #495057;
+  }
+  
+  .contact-form-section {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+  }
+  
+  .submit-button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }

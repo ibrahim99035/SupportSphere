@@ -1,0 +1,140 @@
+.help-center-container {
+    padding: 40px;
+    background-color: #f4f7fc;
+    font-family: Arial, sans-serif;
+    width: 85%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    direction: rtl;
+    position: relative;
+    z-index: 1000;
+  }
+  
+  .help-center-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .help-center-header h1 {
+    color: #143d63;
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .help-center-header p {
+    color: #555;
+    font-size: 18px;
+  }
+  
+  .help-center-menu {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .menu-button {
+    background-color: #143d63;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+  
+.menu-button.active {
+    background-color: #24995b;
+}
+  
+.menu-button:hover {
+    background-color: #24995b;
+}
+  
+.help-center-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+  
+.faq-section h2, .support-section h2, .inquiry-section h2 {
+    color: #143d63;
+    margin-bottom: 20px;
+    text-align: center;
+}
+  
+.faq-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+  
+.faq-section ul li {
+    background-color: white;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+  
+.support-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+  
+.support-section ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+  
+.inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+  
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+  
+.form-group label {
+    font-size: 16px;
+    color: #143d63;
+    margin-bottom: 5px;
+}
+  
+.form-group input, .form-group textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+  
+.submit-button {
+    background-color: #143d63;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.submit-button:hover {
+    background-color: #24995b;
+}  
+
+@media (max-width: 768px) {
+    .help-center-menu {
+        max-width: 90%;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    .menu-button{
+        max-width: 90px;
+        font-size: 15px;
+    }
+}

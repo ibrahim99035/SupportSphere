@@ -1,0 +1,153 @@
+.footer {
+  background-color: #275469;
+  color: white;
+  padding: 50px 20px;
+  direction: rtl;
+}
+  
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+  
+/* Logo Section */
+.logo-section {
+  text-align: center;
+  grid-column: span 3; /* Span across all columns for centered logo */
+  position: relative;
+  z-index: 1000;
+}
+  
+.footer-logo {
+  max-width: 150px; /* Adjust the size of your logo */
+  margin-bottom: 20px;
+}
+  
+.footer-section {
+  padding: 10px;
+  position: relative;
+  z-index: 1000;
+}
+  
+.footer-section h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #f2f2f2;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+  color: #e3e3e3;
+  text-decoration: underline;
+}
+
+/* Social Icons */
+.social-icons a {
+  color: white;
+  margin-right: 15px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #f2f2f2;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
+  padding: 20px 0;
+  margin-top: 40px;
+  position: relative;
+  z-index: 1000;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+}
+
+.footer-bottom a {
+  color: #f2f2f2;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-bottom a:hover {
+  color: #e3e3e3;
+}
+
+#whatsappIcon:hover{
+  color: #128C7E;
+}
+
+#instgramIcon:hover{
+  color: #e6683c;
+}
+
+#twitterIcon:hover{
+  color: black;
+}
+
+#linkedIcon:hover{
+  color: #0A66C2;
+}
+
+#facebookIcon:hover{
+  color: #1877F2;
+}
+
+#gmailIcon:hover{
+  color: #EA4335;
+}
+
+#youtubeIcon:hover{
+  color: #FF0000;
+}
+
+#telegramIcon:hover{
+  color: #0088CC;
+}
+
+#tiktokIcon:hover{
+  color: #490d1c;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(1, 1fr); /* 1 column on mobile */
+    text-align: center;
+  }
+
+  .logo-section {
+    grid-column: span 1;
+  }
+}

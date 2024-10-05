@@ -1,0 +1,22 @@
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+#products{
+  position: relative;
+  text-align: center;
+  color: #fff;
+  z-index: 1000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-grid {
+      grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+}  

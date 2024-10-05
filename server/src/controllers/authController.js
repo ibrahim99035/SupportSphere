@@ -93,7 +93,22 @@ exports.activateEmail = async (req, res) => {
 // Get Current User Info
 exports.getCurrentUser = async (req, res) => {
   try {
-    const user = await User.findById(req.user.userId).select('-password');
+    const { userId } = req.body; // Extract user ID from the request body
+
+    // Validate if userId is provided
+    if (!userId) {
+      return res.status(400).json({ message: 'User ID is required' });
+    }
+
+    // Fetch the user by ID and exclude the password field
+    const user = await User.findById(userId).select('-password');
+
+    // If no user is found, return a 404 response
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    // Respond with the user data
     res.json(user);
   } catch (error) {
     res.status(500).json({ message: 'Error fetching user data' });

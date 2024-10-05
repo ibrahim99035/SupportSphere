@@ -1,0 +1,94 @@
+.hero {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    background: url('https://images.unsplash.com/photo-1498887960847-2a5e46312788?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover; /* Background image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* Text color for contrast */
+    z-index: 1000;
+  }
+
+.hero p{
+  color: #fff;
+}
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-content {
+    text-align: center;
+    z-index: 1;
+    max-width: 80%;
+  }
+
+  .hero-content img{
+    max-width: 300px;
+  }
+  
+  .hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0;
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    animation: fadeInUp 1.5s ease-out;
+  }
+  
+  .hero-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #24995b; /* Primary button color */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .hero-button:hover {
+    background-color: #18663d; /* Darker shade on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+  }
+  
+  /* Keyframes for fade-in animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+  
+    .hero-button {
+      padding: 12px 25px;
+      font-size: 1rem;
+    }
+  }  
