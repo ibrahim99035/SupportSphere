@@ -14,7 +14,9 @@ const ProblemPage = () => {
             <div className="overlay-image"></div>
             <Header />
             <HeroSection />
+            <br /> <br />
             <PostComponent />
+            <br /> <br />
             <Up />
             <Footer />
         </div>

@@ -7,7 +7,7 @@ import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import News from './pages/News';
 
-import PostComponent from './components/Problem/PostComponent';
+import ProblemPage from './pages/ProblemPage';
 
 import IntellectualPropertyRights from './docs/IntellectualPropertyRights/IntellectualPropertyRights';
 import PrivacyPolicy from './docs/Privacy_policy/PrivacyPolicy';
@@ -39,7 +39,7 @@ function App() {
               path='/problem'
               element = {
                 <>
-                  <PostComponent />
+                  <ProblemPage />
                 </>
               }
             />
