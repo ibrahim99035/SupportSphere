@@ -38,6 +38,6 @@ router.delete('/offer/:id/delete', protect, authorizeRoles('admin', 'workshop'),
 
 router.put('/offer/:id/status/update', protect, updateOfferStatus);
 
-router.put('/retrieve/status', protect, getOffersByStatus);
+router.get('/retrieve/status', protect, getOffersByStatus);
 
 module.exports = router;

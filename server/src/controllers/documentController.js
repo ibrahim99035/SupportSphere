@@ -88,7 +88,7 @@ exports.updateDocumentStatus = async (req, res) => {
 // Get documents by status
 exports.getDocumentsByStatus = async (req, res) => {
   try {
-    const { status } = req.params;
+    const { status } = req.body;
 
     const validStatuses = ['in progress', 'done'];
     if (!validStatuses.includes(status)) {

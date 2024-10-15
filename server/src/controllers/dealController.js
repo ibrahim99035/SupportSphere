@@ -12,7 +12,7 @@ exports.createDeal = async (req, res) => {
     await newDeal.save();
     res.status(201).json(newDeal);
   } catch (error) {
-    res.status(500).json({ message: 'Error creating deal' });
+    res.status(500).json({ message: `Error creating deal ${error}` });
   }
 };
 
@@ -54,10 +54,11 @@ exports.getDealById = async (req, res) => {
 // Add offer IDs to a deal
 exports.addOffersToDeal = async (req, res) => {
   try {
-    const { dealId, offers } = req.body; // Assume offers is an array of offer IDs
+    const dealId = req.params.id; // Get dealId from the route params
+    const { offers } = req.body; // Get offers from the request body
     const updatedDeal = await Deal.findByIdAndUpdate(
       dealId,
-      { $addToSet: { offers: { $each: offers } } }, // Add offers if not already present
+      { $addToSet: { offers: { $each: offers } } },
       { new: true }
     );
     res.json(updatedDeal);
@@ -69,9 +70,10 @@ exports.addOffersToDeal = async (req, res) => {
 // Update the workshop for a deal
 exports.updateWorkshopForDeal = async (req, res) => {
   try {
-    const { dealId, workshopId } = req.body; // Assume workshopId is the ID of the chosen workshop
+    const { id } = req.params;
+    const { workshopId } = req.body; // Assume workshopId is the ID of the chosen workshop
     const updatedDeal = await Deal.findByIdAndUpdate(
-      dealId,
+      id,
       { workshop: workshopId },
       { new: true }
     );
@@ -84,22 +86,27 @@ exports.updateWorkshopForDeal = async (req, res) => {
 // Add the chosen offer to a deal
 exports.addChosenOfferToDeal = async (req, res) => {
   try {
-    const { dealId, chosenOfferId } = req.body; // Assume chosenOfferId is the ID of the chosen offer
+    const { id } = req.params; // Use 'id' instead of 'dealId'
+    const { chosenOfferId } = req.body; // Extract chosenOfferId from the request body
+
+    // Find the deal and update its chosenOffer field
     const updatedDeal = await Deal.findByIdAndUpdate(
-      dealId,
+      id,  // Use 'id' here, which is extracted from req.params
       { chosenOffer: chosenOfferId },
-      { new: true }
+      { new: true }  // Return the updated deal
     );
-    res.json(updatedDeal);
+
+    res.json(updatedDeal);  // Return the updated deal in the response
   } catch (error) {
-    res.status(500).json({ message: 'Error adding chosen offer to deal' });
+    res.status(500).json({ message: 'Error adding chosen offer to deal', error });
   }
 };
 
 // Update the status of a deal
 exports.updateDealStatus = async (req, res) => {
   try {
-    const { dealId, status } = req.body; // Get the new status from the request body
+    const { id } = req.params;
+    const { status } = req.body; // Get the new status from the request body
     const validStatuses = ['started', 'finished'];
 
     // Check if the provided status is valid
@@ -108,7 +115,7 @@ exports.updateDealStatus = async (req, res) => {
     }
 
     const updatedDeal = await Deal.findByIdAndUpdate(
-      dealId,
+      id,
       { status: status },
       { new: true }
     );

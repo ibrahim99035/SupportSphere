@@ -32,6 +32,6 @@ router.delete('/document/:id/delete', protect, authorizeRoles('admin', 'moderato
 router.put('/document/:id/status/update', protect, authorizeRoles('admin', 'moderator'), updateDocumentStatus);
 
 // Route for retrieve documents by status
-router.put('/retrieve/status', protect, authorizeRoles('admin', 'moderator'), getDocumentsByStatus);
+router.get('/document/retrieve/status', protect, authorizeRoles('admin', 'moderator'), getDocumentsByStatus);
 
 module.exports = router;

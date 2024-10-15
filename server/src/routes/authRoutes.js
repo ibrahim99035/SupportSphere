@@ -26,6 +26,6 @@ router.put('/reset-password', resetPassword);
 
 router.put('/workshop-data/:userId', protect, authorizeRoles('admin', 'workshop'), updateWorkshopInfo);
 
-router.put('/update-profile', protect, updateUser);
+router.put('/update-profile/:id', protect, updateUser);
 
 module.exports = router;

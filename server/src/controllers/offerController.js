@@ -11,7 +11,7 @@ exports.createOffer = async (req, res) => {
     await newOffer.save();
     res.status(201).json(newOffer);
   } catch (error) {
-    res.status(500).json({ message: 'Error creating offer' });
+    res.status(500).json({ message: 'Error creating offer', error: error });
   }
 };
 
@@ -107,7 +107,7 @@ exports.updateOfferStatus = async (req, res) => {
     );
 
     if (!updatedOffer) {
-      return res.status(404).json({ message: 'Offer not found' });
+      return res.status(404).json({ message: `Offer not found ${updatedOffer}` });
     }
 
     res.json({ message: 'Offer status updated successfully', offer: updatedOffer });
@@ -119,7 +119,7 @@ exports.updateOfferStatus = async (req, res) => {
 // Get offers by status
 exports.getOffersByStatus = async (req, res) => {
   try {
-    const { status } = req.params;
+    const { status } = req.body;
 
     const validStatuses = ['buffering', 'accepted', 'denied'];
     if (!validStatuses.includes(status)) {

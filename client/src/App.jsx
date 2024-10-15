@@ -7,6 +7,8 @@ import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import News from './pages/News';
 
+import PostComponent from './components/Problem/PostComponent';
+
 import IntellectualPropertyRights from './docs/IntellectualPropertyRights/IntellectualPropertyRights';
 import PrivacyPolicy from './docs/Privacy_policy/PrivacyPolicy';
 import TermsAndConditions from './docs/Terms_and_Conditions/TermsAndConditions';
@@ -30,6 +32,14 @@ function App() {
               element = {
                 <>
                   <HomePage />
+                </>
+              }
+            />
+            <Route
+              path='/problem'
+              element = {
+                <>
+                  <PostComponent />
                 </>
               }
             />
