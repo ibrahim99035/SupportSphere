@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../CSS/up.css';
-import { FaArrowUp } from "react-icons/fa";
+import { PiCaretCircleDoubleUpFill } from "react-icons/pi";
 
 const Up = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -36,7 +36,7 @@ const Up = () => {
       className={`goToTopBtn ${isVisible ? 'visible' : ''}`}
       onClick={scrollToTop}
     >
-      <FaArrowUp />
+      <PiCaretCircleDoubleUpFill />
     </button>
   );
 };

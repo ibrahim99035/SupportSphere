@@ -10,13 +10,13 @@
 /* Global styling for all elements */
 * {
   box-sizing: border-box;
-  font-family: "Changa", sans-serif;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
 }
 
 /* Styling for anchor (link) elements */
 a {
   text-decoration: none;
-  font-family: "Changa", sans-serif;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
   color: var(--bg-color);
   transition: all 0.3s linear;
 }
@@ -44,7 +44,7 @@ button:hover {
 body {
   padding: 0;
   margin: 0;
-  font-family: "Changa", sans-serif;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
   background: var(--blacker-color);
   text-align: start;
   z-index: 1000;
@@ -165,4 +165,11 @@ main {
 
 #homelogo img{
   max-width: 200px;
+}
+
+hr{
+  width: 95%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

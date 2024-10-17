@@ -1,72 +1,116 @@
 /* Styling for the entire post form container */
 .post-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    position: relative;
-    z-index: 999;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* General styling for form elements */
-  .post-container textarea, .post-container input[type="file"], .ProbblemButton {
-    width: 100%;
-    margin: 10px 0;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  .post-container textarea {
-    resize: none;
-    height: 100px;
-  }
-  
-  .post-container .ProbblemButton {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .post-container .ProbblemButton:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Styling for images and audio */
-  .post-container img {
-    display: block;
-    width: 100%;
-    max-width: 400px;
-    margin: 10px 0;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .post-container audio {
-    width: 100%;
-    margin-top: 10px;
-  }
-  
-  /* Styling for the post display section */
-  .post-container .post {
-    background-color: white;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .post-container .post p {
-    margin: 0;
-    font-size: 18px;
-  }
-  
-  .post-container .post small {
-    color: #666;
-    font-size: 12px;
-  }  
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  position: relative;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* General styling for form elements */
+.post-container textarea, .post-container input[type="file"], .ProbblemButton {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.post-container textarea {
+  resize: none;  /* Disable manual resize */
+  max-height: 50px;  /* Start with a smaller height */
+  border-radius: 20px;  /* Rounded corners */
+  border: 1px solid #ddd;  /* Light border */
+  padding: 10px 15px;  /* Padding to make it feel comfortable */
+  width: 85%;  /* Full width */
+  box-sizing: border-box;  /* Ensure padding doesn't affect width */
+  outline: none;  /* Remove outline on focus */
+  font-size: 16px;  /* Font size similar to WhatsApp */
+  background-color: #f1f1f1;  /* Light background */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  /* Subtle inner shadow */
+  overflow-y: hidden;  /* Allow auto-scrolling */
+  transition: all 0.2s ease-in-out;  /* Smooth transitions */
+}
+
+.post-container textarea:focus {
+  border-color: #007bff;  /* WhatsApp-like blue border on focus */
+  background-color: #fff;  /* White background on focus */
+}
+
+
+.post-container .ProbblemButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.post-container .ProbblemButton:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for images and audio */
+.post-container img {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.post-container audio {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Styling for the post display section */
+.post-container .post {
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.post-container .post p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.post-container .post small {
+  color: #666;
+  font-size: 12px;
+}  
+
+#Microphone, .camera-icon{
+  width: 35px;
+  height: 35px;
+  padding: 0px;
+  background-color: rgb(11, 51, 51);
+  font-size: 20px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-left: 10px;
+}
+
+.camera-icon{
+  font-size: 18px;
+}
+
+#inputscontainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}

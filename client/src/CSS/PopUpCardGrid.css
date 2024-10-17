@@ -6,12 +6,17 @@
     gap: 20px; /* Space between cards */
     align-items: center; /* Align cards to the top */
     justify-content: center;
-  }
+}
+
+#popupcardcontainer h2{
+    color: #89c2ff;
+    font-size: 35px;
+}
   
-  /* Optional: Styling for the card row container */
-  .popcard-grid::-webkit-scrollbar {
+/* Optional: Styling for the card row container */
+.popcard-grid::-webkit-scrollbar {
     display: none; /* Hide scrollbar */
-  }
+}
 
 #popupcardcontainer{
   text-align: center;

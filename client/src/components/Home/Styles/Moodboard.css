@@ -1,0 +1,66 @@
+/* Moodboard */
+.moodboard {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    background-color: rgba(0, 255, 255, 0.158);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    margin: auto;
+    border-radius: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    position: relative;
+    z-index: 999;
+}
+
+.moodboard h2{
+    color: #89c2ff;
+    font-size: 35px;
+    text-align: center;
+}
+
+.issue-card{
+    width: 270px;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.issue-card:hover{  
+    transform: scale(1.1);
+}
+
+.issue-card img{
+    max-width: 250px;
+    border-radius: 5px;
+    min-height: 180px;
+}
+
+/* Issue Grid */
+.issue-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns */
+    gap: 20px; /* Space between grid items */
+    margin: auto; /* Center the grid */
+}
+
+/* Optional: Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .issue-grid {
+        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .issue-grid {
+        grid-template-columns: 1fr; /* Adjust to 1 column on very small screens */
+    }
+}

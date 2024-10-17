@@ -1,5 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import '../../CSS/PostComponent.css';  // Importing the external CSS file
+import '../../CSS/PostComponent.css';
+
+import { FaMicrophone } from "react-icons/fa6";
+import { FaCamera } from "react-icons/fa";
+import { PiMicrophoneSlashFill } from "react-icons/pi";
 
 const PostComponent = () => {
   const [text, setText] = useState('');
@@ -80,22 +84,34 @@ const PostComponent = () => {
         ))}
       </div>
       <hr />
-      <textarea
-        value={text}
-        onChange={handleTextChange}
-        placeholder="Write something..."
-      />
-      <br />
+      <div id="inputscontainer">
+        <textarea
+          value={text}
+          onChange={handleTextChange}
+          placeholder="Write something..."
+        />
+        <br />
 
-      {/* Photo Capture */}
-      <input type="file" accept="image/*" capture="camera" onChange={handlePhotoCapture} />
-      {photo && <img src={photo} alt="Captured" />}
-      <br />
+        {/* Photo Capture */}
+        <label htmlFor="photo-upload" className="camera-icon">
+          <FaCamera />
+        </label>
+        <input
+          type="file"
+          accept="image/*"
+          capture="camera"
+          id="photo-upload"
+          onChange={handlePhotoCapture}
+          style={{ display: 'none' }}  // Hide the input
+        />
+        {photo && <img src={photo} alt="Captured" />}
+        <br />
 
-      {/* Voice Recording */}
-      <button onClick={isRecording ? stopRecording : startRecording} className='ProbblemButton'>
-        {isRecording ? 'Stop Recording' : 'Start Recording'}
-      </button>
+        {/* Voice Recording */}
+        <div onClick={isRecording ? stopRecording : startRecording} className='ProbblemButton' id='Microphone'>
+          {isRecording ? <FaMicrophone /> : <PiMicrophoneSlashFill />}
+        </div>
+      </div>
       {audioURL && (
         <div>
           <audio controls src={audioURL} />

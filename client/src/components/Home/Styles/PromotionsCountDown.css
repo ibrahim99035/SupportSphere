@@ -1,0 +1,14 @@
+/* Countdown Timer */
+.countdown-timer {
+    background-color: #3c0fdda4;
+    border-radius: 8px;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 999;
+    color: white;
+    height: 130px;
+    width: 95%;
+    margin: auto;
+}

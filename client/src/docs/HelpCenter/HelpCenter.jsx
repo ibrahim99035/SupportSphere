@@ -4,6 +4,7 @@ import Header from '../../components/Layout/Header'
 import HeroSection from '../../components/Other/HeroSection';
 import Footer from '../../components/Layout/Footer';
 import Up from '../../components/Other/Up';
+import FQACOM from '../../components/Other/FQACOM'
 
 import './HelpCenter.css';
 
@@ -14,25 +15,11 @@ const HelpCenter = () => {
     setActiveSection(section);
   };
 
-  const [activeIndex, setActiveIndex] = useState(null);
-  const contentRef = useRef([]);
-
-  const toggleFAQ = (index) => {
-    setActiveIndex(index === activeIndex ? null : index);
-  };
-
-  const faqData = [
-    {
-      question: 'سؤال؟',
-      answer: 'إجابة',
-    }
-  ];
-
   return (
     <>
-        <div className="overlay-image"></div>
         <Header />
-        <HeroSection />  
+        <HeroSection /> 
+        <div className="overlay-image"></div>
         <div className="help-center-container">
             <div className="help-center-header">
                 <h1>مرحبًا بك في مركز المساعدة</h1>
@@ -62,30 +49,7 @@ const HelpCenter = () => {
 
             <div className="help-center-content">
                 {activeSection === 'faq' && (
-                    <div className="faq-items">
-                        {faqData.map((item, index) => (
-                        <div
-                            className={`faq-item ${activeIndex === index ? 'active' : ''}`}
-                            key={index}
-                            onClick={() => toggleFAQ(index)}
-                        >
-                            <div className="faq-question">
-                            <h3>{item.question}</h3>
-                            <span className={`faq-icon ${activeIndex === index ? 'rotate' : ''}`}>+</span>
-                            </div>
-                            <div
-                            ref={(el) => (contentRef.current[index] = el)}
-                            className="faq-answer"
-                            style={{
-                                maxHeight: activeIndex === index ? `${contentRef.current[index]?.scrollHeight}px` : '0px',
-                                opacity: activeIndex === index ? '1' : '0',
-                            }}
-                            >
-                            <p>{item.answer}</p>
-                            </div>
-                        </div>
-                        ))}
-                    </div>
+                    <FQACOM />
                 )}
 
                 {activeSection === 'support' && (

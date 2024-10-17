@@ -15,23 +15,31 @@
   .help-center-header {
     text-align: center;
     margin-bottom: 40px;
+    position: relative;
+    z-index: 1000;
   }
   
   .help-center-header h1 {
     color: #143d63;
     font-size: 36px;
     margin-bottom: 10px;
+    position: relative;
+    z-index: 1000;
   }
   
   .help-center-header p {
     color: #555;
     font-size: 18px;
+    position: relative;
+    z-index: 1000;
   }
   
   .help-center-menu {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
+    position: relative;
+    z-index: 1000;
   }
   
   .menu-button {
@@ -44,6 +52,8 @@
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s;
+    position: relative;
+    z-index: 1000;
 }
   
 .menu-button.active {
@@ -57,17 +67,23 @@
 .help-center-content {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1000;
 }
   
 .faq-section h2, .support-section h2, .inquiry-section h2 {
     color: #143d63;
     margin-bottom: 20px;
     text-align: center;
+    position: relative;
+    z-index: 1000;
 }
   
 .faq-section ul {
     list-style-type: none;
     padding: 0;
+    position: relative;
+    z-index: 1000;
 }
   
 .faq-section ul li {
@@ -77,33 +93,45 @@
     padding: 15px;
     font-size: 16px;
     border-radius: 5px;
+    position: relative;
+    z-index: 1000;
 }
   
 .support-section ul {
     list-style-type: none;
     padding: 0;
+    position: relative;
+    z-index: 1000;
 }
   
 .support-section ul li {
     font-size: 16px;
     margin-bottom: 10px;
+    position: relative;
+    z-index: 1000;
 }
   
 .inquiry-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    position: relative;
+    z-index: 1000;
 }
   
 .form-group {
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 1000;
 }
   
 .form-group label {
     font-size: 16px;
     color: #143d63;
     margin-bottom: 5px;
+    position: relative;
+    z-index: 1000;
 }
   
 .form-group input, .form-group textarea {
@@ -111,6 +139,8 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
+    position: relative;
+    z-index: 1000;
 }
   
 .submit-button {
@@ -121,6 +151,8 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    position: relative;
+    z-index: 1000;
 }
   
 .submit-button:hover {
